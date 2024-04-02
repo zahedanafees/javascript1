@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert container bg-info mt-5" style="display: none;" id="popup">
+        want transaction
+        <button onclick="deb()">Debit</button>
+        <button onclick="cre()">Credit</button>
+    </div>
+    <div class="container">
+    <div class="card mt-5 p-5">
+        <h1>User details</h1>
+        <p>Name:Nafees</p>
+        <p>Phno:1234567899</p>
+        <p>Account Number:11212134152155</p>
+        <p>Amount:50000</p>
+        <div>
+            <a href="index.html"><button class="btn btn-outline-info">Back To Home</button></a>
+        <button class="btn btn-outline-info" onclick="transaction()">Transaction</button>
+    </div>
+    </div>
+    </div>
+    <script>
+       function transaction(){
+        document.getElementById("popup").style.display="block";
+       }
+      function deb(){
+        let pin=+prompt("Enter your pin");
+        if(pin===1111){
+            location.href="debit.html";
+        }
+        else{
+            alert("Enter valid pin");
+        }
+      }
+       function cre(){
+        let pin=+prompt("Enter your pin");
+        if(pin===1111){
+            location.href="credit.html";
+        }
+        else{
+            alert("Enter valid pin");
+        }
+       }
+    </script>
+</body>
+</html>

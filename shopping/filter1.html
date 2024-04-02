@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mainbox{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+    .card{
+        height:300px;
+        width:300px;
+        margin:1%;
+        padding:1%;
+    }
+    .card img{
+        height:250px;
+        width:100%;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="number" placeholder="Enter Min Value" id="minVal"/>
+        <input type="number" placeholder="Enter Max Value" id="maxVal"/>
+        <input type="button" class="submit" value="filter"/>
+    </form>
+    <div class="mainbox">
+        <div class="card parent" data-value="5000">
+            <img src="https://i.pinimg.com/564x/55/2d/be/552dbe4bbe7f53b3b7ea7c50b4df7433.jpg" />
+            <p>₹5000</p>
+        </div>
+        <div class="card parent" data-value="6000">
+            <img src="https://i.pinimg.com/474x/93/71/b5/9371b5353c26a5f9319c2fdd3e8d0ced.jpg" />
+            <p>₹6000</p>
+        </div>
+        <div class="card parent" data-value="1500">
+            <img src="https://i.pinimg.com/564x/5e/f9/3c/5ef93c4b0e75b4a9a50aeda666ceda29.jpg" />
+            <p>₹1500</p>
+        </div>
+        <div class="card parent" data-value="4000">
+            <img src="https://i.pinimg.com/474x/13/c7/d8/13c7d8dd736008ce5999ad81e94e4d00.jpg" />
+            <p>₹4000</p>
+        </div>
+        <div class="card parent" data-value="3500">
+            <img src="https://i.pinimg.com/564x/81/76/72/817672619c1bd80e3905092ecfab7f70.jpg"/>
+            <p>₹3500</p>
+        </div>
+        <div class="card parent" data-value="10000">
+            <img src="https://i.pinimg.com/564x/cd/90/ad/cd90ad1105ab8b20b8f42bb32d84ec3a.jpg" />
+            <p>₹10000</p>
+        </div>
+        <div class="card parent" data-value="5500">
+            <img src="https://i.pinimg.com/564x/cb/26/8b/cb268b5bdfb996fd77092cb5fad127d7.jpg" />
+            <p>₹5500</p>
+        </div>
+        <div class="card parent" data-value="6500">
+            <img src="https://i.pinimg.com/564x/cc/bc/7d/ccbc7d0bd5dfb23af2c9bc5c2a07bc92.jpg" />
+            <p>₹6500</p>
+        </div>
+    </div>
+    <a href="women.html"><button class="btn btn-outline-success">Back To Womens Wear</button></a>
+    <script>
+        subBtn=document.querySelector('.submit');
+    
+        let dataValue=document.querySelectorAll('.parent');
+        dataValue.forEach(function(Items){
+    
+            subBtn.addEventListener('click',function(){
+                let min=document.getElementById("minVal").value;
+                let max=document.getElementById("maxVal").value;
+                minPI=parseInt(min);
+                maxPI=parseInt(max);
+    
+                let dataItems=Items.getAttribute('data-value');
+                if(dataItems>=minPI && dataItems<=maxPI){
+                    Items.style.display="block";
+                }
+                else{
+                    Items.style.display="none";
+                }
+            })
+        })
+
+        </script>
+</body>
+</html>

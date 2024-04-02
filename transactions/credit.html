@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card mt-5 p-5">
+            <h1>CREDIT</h1>
+            <form>
+                <input type="number" placeholder="Enter Amount" id="cre"/>
+                <button onclick="crd()">Submit</button>
+                <button onclick="check()">Check Balance</button>
+            </form>
+            <div>
+                <a href="holder.html"><button class="btn btn-outline-info" onclick="cred()">Back To Details </button></a>
+            </div>
+</div>
+</div>
+<script>
+    function cred(){
+        let pin=+prompt("Enter Your Pin");
+        if(pin===1111){
+            location.href="holder.html";
+        }
+        else{
+            alert("Enter Valid pin");
+        }
+        }
+    function crd(){
+        const Amount=50000;
+        let x=document.getElementById("cre").value;
+        let xValue=parseInt(x);
+              const res=(Amount+xValue);
+              alert("Your New Balance is:"+res);
+    }
+    
+</script>
+ 
+</body>
+</html>
